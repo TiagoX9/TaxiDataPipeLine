@@ -10,26 +10,18 @@ import pandas as pd
 from dask.diagnostics import ProgressBar
 
 logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 
 def initialize():
-    parser = argparse.ArgumentParser(description='Analysis of NYC Yellow Taxi Trip Data')
-    parser.add_argument('-v', '--verbose', action='store_true', default=False, help='Verbose output')
-    parser.add_argument('-l', '--logfile', help='Write log output to a file')
-    args = parser.parse_args()
+    fileHandler = logging.FileHandler('pipeline.log')
+    fileHandler.setLevel(logging.INFO)
 
-    handler = [logging.StreamHandler()]
-    log_format = '%(asctime)s %(levelname)s - %(name)s - %(message)s'
+    consoleHandler = logging.StreamHandler()
+    consoleHandler.setLevel(logging.INFO)
 
-    if args.logfile:
-        logging.basicConfig(format=log_format, level=logging.INFO, file=args.logfile)
-
-    logging.basicConfig(format=log_format,
-                        level=logging.INFO,
-                        handlers=handler)
-
-    if args.verbose:
-        logger.setLevel(logging.DEBUG)
+    logger.addHandler(fileHandler)
+    logger.addHandler(consoleHandler)
 
 
 def clean_data(df, index):
