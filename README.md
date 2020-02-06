@@ -36,11 +36,12 @@ env\Scripts\activate
 ```  
 
 * Install project dependencies 
-Project dependencies are listed in `requirements.txt` file
+
+Project dependencies are listed in `requirements.txt` file. Using below command to install them -
 ```sh    
 pip install -r requirements.txt
 ```    
-To install `dask` using `pip`, use the below command in command prompt/terminal window:
+If there is any issue in installing dask using `requirements.txt` file, use the below command in command prompt/terminal window:
 ```sh
 pip install “dask[complete]”
 
@@ -74,6 +75,7 @@ Here is the list of data source urls used for creating data Pipe Line -
     https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-06.csv
     
 ## Future Enhancement Plan:    
+    • Current implementation runs in a single process using single thread. Use ProcessPoolExecutor/asyncio for faster parallel/concurrent executaion.
     • Create a Python setup/installer for distribution 	
     • Optimize performance using asyncio and dask scheduler
     • Scale pipeline to a multiple of the data size that does not fit any more to one machine using multinode clusters in cloud (e.g. AWS)

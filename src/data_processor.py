@@ -126,7 +126,7 @@ def main():
         avg_trip_length = calculate_monthly_average(df)
         print(avg_trip_length)
 
-        # Calclate Rolling monthly average
+        # Calculate Rolling average
         rolling_trip_length = rolling_average(df)
         print(rolling_trip_length)
 
