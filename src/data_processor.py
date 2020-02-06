@@ -76,10 +76,11 @@ def calculate_monthly_average(df):
 
     with ProgressBar():
         df['month'] = df['tpep_pickup_datetime'].dt.strftime("%B")
-		try:
+        try:
             monthly_average = df.groupby(df['month'])['trip_distance'].mean().compute()
         except Exception as ex:
             logger.error(f"Monthly Average calculation failed with error : {ex}")
+
 
     logger.debug("Calculation of monthly trip length average completed")
     return monthly_average
@@ -97,7 +98,7 @@ def rolling_average(df):
         # Convert to pandas dataframe
         dfp = df.compute()
         dfp['month'] = pd.to_datetime(dfp['tpep_pickup_datetime']).dt.strftime("%B")
-		try:
+        try:
             r_average = dfp.groupby(dfp['month'])['trip_distance'].rolling(45).mean().reset_index(name='Rolling Average')
         except Exception as ex:
             logger.error(f"Rolling Average calculation failed with error : {ex}")

@@ -74,9 +74,8 @@ Here is the list of data source urls used for creating data Pipe Line -
     https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-06.csv
     
 ## Future Enhancement Plan:    
-    • Create a Python setup/installer for distribution 
-	• Setup automated build
-    • Optimize performance
-    • Create a graph to visualize average trip per month
-    • The rolling average is calculated using pandas due to time constraints,
-     Investigate if this functionality is also supported by 'dask'.
+    • Create a Python setup/installer for distribution 	
+    • Optimize performance using asyncio and dask scheduler
+    • Scale pipeline to a multiple of the data size that does not fit any more to one machine using multinode clusters in cloud (e.g. AWS)
+    • Setup automated build
+    
