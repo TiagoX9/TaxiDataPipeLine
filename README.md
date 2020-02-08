@@ -14,58 +14,66 @@ Follow these instructions to get the source code and run it on your local machin
 
 ### Prerequisites
 
-You need `Python 3.7.3` ([Official download link](https://www.python.org/downloads/release/python-373/)) to run this project.
-Additionally, it has been developed on a Windows 10 PC, so the command written below are specific to Windows environment.
+  You need `Python 3.7.3` ([Official download link](https://www.python.org/downloads/release/python-373/)) to run this project.
 
 ### Clone repository
-```sh
-git clone https://github.com/write2sushma/TaxiDataPipeLine.git
-```
+  ```sh
+  git clone https://github.com/write2sushma/TaxiDataPipeLine.git
+  ```
 
 ### Set-up development environment
 
 * Navigate to TaxiDataPipeLine folder
-```sh
-cd TaxiDataPipeLine
-```
+  ```sh
+  cd TaxiDataPipeLine
+  ```
 
 * Create a virtual environment and activate it
-```sh    
-python -m venv env
-env\Scripts\activate
-```  
+
+  In Linux OS
+  ```sh    
+  python3 -m venv env
+  source env\bin\activate
+  ```  
+
+  In Windows OS
+  ```sh    
+  python -m venv env
+  env\Scripts\activate
+  ```  
 
 * Install project dependencies 
 
-Project dependencies are listed in `requirements.txt` file. Using below command to install them -
-```sh    
-pip install -r requirements.txt
-```    
-If there is any issue in installing dask using `requirements.txt` file, use the below command in command prompt/terminal window:
-```sh
-pip install “dask[complete]”
+  Project dependencies are listed in `requirements.txt` file. Use below command to install them -
+  ```sh    
+  pip3 install -r requirements.txt
+  ```    
+  
+  If there is any issue in installing dask using `requirements.txt` file, use the below commands in command prompt/terminal window:
+  ```sh
+  pip3 install “dask[complete]”
 
-pip install dask distributed
-```
+  pip3 install dask distributed
+  ```
 
 ### How to run
 
-Navigate to `TaxiDataPipeLine\src` folder and run `data_processor.py`
+  Navigate to `TaxiDataPipeLine\src` folder and run `data_processor.py`
 
-```sh
-python data_processor.py
-```
+  ```sh
+  python data_processor.py
+  ```
 
 ### How to Unit Test
 
-Unit tests are written using Python's UnitTest library. Tests can be run using below command:
-```sh
-python -m unittest test/test_data_processor.py
-```
+  Unit tests are written using Python's UnitTest library. Tests can be run using below command:
+  ```sh
+  python -m unittest test/test_data_processor.py
+  ```
 
 
 ## Data Source
-Here is the list of data source urls used for creating data Pipe Line -
+  Here is the list of data source urls used for creating data Pipe Line -
 
     https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-01.csv
     https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-02.csv
@@ -80,4 +88,5 @@ Here is the list of data source urls used for creating data Pipe Line -
     • Optimize performance using asyncio and dask scheduler
     • Scale pipeline to a multiple of the data size that does not fit any more to one machine using multinode clusters in cloud (e.g. AWS)
     • Setup automated build
+    • Setup performance monitoring (e.g. using New Relic)
     
