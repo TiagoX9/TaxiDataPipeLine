@@ -30,8 +30,6 @@ Follow these instructions to get the source code and run it on your local machin
 
 * Create a virtual environment and activate it
 
-* Create a virtual environment and activate it
-
   In Linux OS
   ```sh    
   python3 -m venv env
@@ -46,12 +44,12 @@ Follow these instructions to get the source code and run it on your local machin
 
 * Install project dependencies 
 
-  Project dependencies are listed in `requirements.txt` file. Using below command to install them -
+  Project dependencies are listed in `requirements.txt` file. Use below command to install them -
   ```sh    
   pip3 install -r requirements.txt
   ```    
   
-  If there is any issue in installing dask using `requirements.txt` file, use the below command in command prompt/terminal window:
+  If there is any issue in installing dask using `requirements.txt` file, use the below commands in command prompt/terminal window:
   ```sh
   pip3 install “dask[complete]”
 
