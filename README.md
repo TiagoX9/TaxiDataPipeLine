@@ -15,7 +15,6 @@ Follow these instructions to get the source code and run it on your local machin
 ### Prerequisites
 
 You need `Python 3.7.3` ([Official download link](https://www.python.org/downloads/release/python-373/)) to run this project.
-Additionally, it has been developed on a Windows 10 PC, so the command written below are specific to Windows environment.
 
 ### Clone repository
 ```sh
@@ -30,6 +29,18 @@ cd TaxiDataPipeLine
 ```
 
 * Create a virtual environment and activate it
+
+* Create a virtual environment and activate it
+
+In Linux OS
+
+```sh    
+python3 -m venv env
+source env\bin\activate
+```  
+
+In Windows OS
+
 ```sh    
 python -m venv env
 env\Scripts\activate
@@ -39,13 +50,13 @@ env\Scripts\activate
 
 Project dependencies are listed in `requirements.txt` file. Using below command to install them -
 ```sh    
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```    
 If there is any issue in installing dask using `requirements.txt` file, use the below command in command prompt/terminal window:
 ```sh
-pip install “dask[complete]”
+pip3 install “dask[complete]”
 
-pip install dask distributed
+pip3 install dask distributed
 ```
 
 ### How to run
@@ -80,4 +91,5 @@ Here is the list of data source urls used for creating data Pipe Line -
     • Optimize performance using asyncio and dask scheduler
     • Scale pipeline to a multiple of the data size that does not fit any more to one machine using multinode clusters in cloud (e.g. AWS)
     • Setup automated build
+    • Setup performance monitoring (e.g. using New Relic)
     
