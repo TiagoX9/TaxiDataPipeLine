@@ -37,6 +37,54 @@
 <ul class="simple">
 <li><p>Here we specify the documented module name:</p></li>
 </ul>
+<p>This module provides analysis of NYC Yellow Taxi data.</p>
+<dl class="function">
+<dt>
+<code class="sig-prename descclassname">data_processor.</code><code class="sig-name descname">calculate_monthly_average</code><span class="sig-paren">(</span><em class="sig-param">df</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates average trip length per month.
+:param df: dataframe
+:return: Average trip length per month.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="sig-prename descclassname">data_processor.</code><code class="sig-name descname">clean_data</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">index</em><span class="sig-paren">)</span></dt>
+<dd><p>Cleans up data so that only relevant data is processed during calculations.
+:param df: Data Frame to analyse
+:param index: Month of trip data
+:return: Cleaned up data frame</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="sig-prename descclassname">data_processor.</code><code class="sig-name descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Enable logging to a file and to console.
+:return:</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="sig-prename descclassname">data_processor.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Processes data source files (in CSV format) in a loop.
+:return:</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="sig-prename descclassname">data_processor.</code><code class="sig-name descname">read_trip_data</code><span class="sig-paren">(</span><em class="sig-param">url</em><span class="sig-paren">)</span></dt>
+<dd><p>Loads CSV file in chunks of 100 MB and return dataframe.
+:param url: url for loading csv data.
+:return: dataframe</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="sig-prename descclassname">data_processor.</code><code class="sig-name descname">rolling_average</code><span class="sig-paren">(</span><em class="sig-param">df</em><span class="sig-paren">)</span></dt>
+<dd><p>This function calculates rolling average per month.
+:param df: dataframe
+:return: Rolling average per month</p>
+</dd></dl>
+
 </div>
 
 
