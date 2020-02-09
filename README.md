@@ -3,9 +3,9 @@ Project to create a simple data pipeline using Yellow Taxis trip data
 
 ## Content
 
+* [docs](docs/) - Project documentation
 * [src](src/) - Python source code
 * [test](test/) - Unit test
-* [docs](docs/) - Project documentation
 
 
 ## Getting Started
