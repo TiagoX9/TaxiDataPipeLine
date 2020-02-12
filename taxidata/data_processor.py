@@ -1,7 +1,8 @@
 """
-This module provides analysis of NYC Yellow Taxi data.
+This module provides analysis of NYC Yellow Taxi data
 """
 
+import argparse
 import logging
 
 import dask.dataframe as dd
@@ -13,18 +14,14 @@ logger.setLevel(logging.INFO)
 
 
 def initialize():
-    """
-    Enable logging to a file and to console.
-    :return:
-    """
-    file_handler = logging.FileHandler('pipeline.log')
-    file_handler.setLevel(logging.INFO)
+    fileHandler = logging.FileHandler('pipeline.log')
+    fileHandler.setLevel(logging.INFO)
 
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
+    consoleHandler = logging.StreamHandler()
+    consoleHandler.setLevel(logging.INFO)
 
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
+    logger.addHandler(fileHandler)
+    logger.addHandler(consoleHandler)
 
 
 def clean_data(df, index):
@@ -51,8 +48,8 @@ def clean_data(df, index):
 
 def read_trip_data(url):
     """
-    Loads CSV file in chunks of 100 MB and return dataframe.
-    :param url: url for loading csv data.
+    Loads CSV file in chunks of 100 MB and return dataframe
+    :param url: url for loading csv data
     :return: dataframe
     """
     if len(url) == 0:
@@ -71,9 +68,9 @@ def read_trip_data(url):
 
 def calculate_monthly_average(df):
     """
-    Calculates average trip length per month.
+    Calculates average trip length per month
     :param df: dataframe
-    :return: Average trip length per month.
+    :return: Average trip length per month
     """
     logger.info("Calculating trip length average")
 

@@ -68,7 +68,8 @@ Follow these instructions to get the source code and run it on your local machin
 
   Unit tests are written using Python's UnitTest library. Tests can be run using below command:
   ```sh
-  python -m unittest test/test_data_processor.py
+  cd test
+  pytest test_data_processor.py
   ```
 
 

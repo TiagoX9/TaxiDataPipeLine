@@ -1,7 +1,7 @@
 import unittest
 
 import dask.dataframe as dd
-from src import data_processor
+from taxidata import data_processor
 
 
 class TestDataProcessor(unittest.TestCase):
