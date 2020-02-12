@@ -58,7 +58,7 @@ Follow these instructions to get the source code and run it on your local machin
 
 ### How to run
 
-  Navigate to `TaxiDataPipeLine\src` folder and run `data_processor.py`
+  Navigate to `TaxiDataPipeLine\taxidata` folder and run `data_processor.py`
 
   ```sh
   python data_processor.py
