@@ -85,7 +85,6 @@ Follow these instructions to get the source code and run it on your local machin
     
 ## Future Enhancement Plan:    
     • Current implementation runs in a single process using single thread. Use ProcessPoolExecutor/asyncio for faster parallel/concurrent executaion.
-    • Create a Python setup/installer for distribution 	
     • Optimize performance using asyncio and dask scheduler
     • Scale pipeline to a multiple of the data size that does not fit any more to one machine using multinode clusters in cloud (e.g. AWS)
     • Setup automated build
