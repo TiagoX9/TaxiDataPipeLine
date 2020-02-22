@@ -1,3 +1,13 @@
+## Status
+
+|   | Build & Test |
+|---|:-----:|
+|**Windows x64**|![Build & Test][win-x64-build-badge]
+|**Linux x64**|![Build & Test][linux-x64-build-badge]
+
+[win-x64-build-badge]: https://mseng.visualstudio.com/pipelinetools/_apis/build/status/VSTS.Agent/azure-pipelines-agent.ci?branchName=master&jobname=Windows%20Agent%20(x64)
+[linux-x64-build-badge]: https://mseng.visualstudio.com/pipelinetools/_apis/build/status/VSTS.Agent/azure-pipelines-agent.ci?branchName=master&jobname=Linux%20Agent%20(x64)
+
 # TaxiDataPipeLine
 Project to create a simple data pipeline using Yellow Taxis trip data
 
@@ -83,10 +93,12 @@ Follow these instructions to get the source code and run it on your local machin
     https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-05.csv
     https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-06.csv
     
+## Automated build setup
+Azure DevOp Pipeline is used to set and configure [Automated build pipeline](https://sushmag.visualstudio.com/TaxiDataPipeLine)
+    
 ## Future Enhancement Plan:    
     • Current implementation runs in a single process using single thread. Use ProcessPoolExecutor/asyncio for faster parallel/concurrent executaion.
     • Optimize performance using asyncio and dask scheduler
     • Scale pipeline to a multiple of the data size that does not fit any more to one machine using multinode clusters in cloud (e.g. AWS)
-    • Setup automated build
     • Setup performance monitoring (e.g. using New Relic)
     
