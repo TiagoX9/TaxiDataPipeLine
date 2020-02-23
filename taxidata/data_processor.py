@@ -53,7 +53,7 @@ def read_trip_data(url):
     """
     Loads CSV file in chunks of 100 MB and return dataframe.
     :param url: url for loading csv data
-    :return: dataframe
+    :return: data frame
     """
     if len(url) == 0:
         logger.warning("Please provide a non empty url.")
@@ -72,7 +72,7 @@ def read_trip_data(url):
 def calculate_monthly_average(df):
     """
     Calculates average trip length per month.
-    :param df: dataframe
+    :param df: data frame
     :return: Average trip length per month
     """
     logger.info("Calculating trip length average")
@@ -92,7 +92,7 @@ def calculate_monthly_average(df):
 def rolling_average(df):
     """
     This function calculates rolling average per month.
-    :param df: dataframe
+    :param df: data frame
     :return: Rolling average per month
     """
     logger.info("Calculating rolling trip length average")
