@@ -7,6 +7,7 @@ import logging
 import dask.dataframe as dd
 import pandas as pd
 from dask.diagnostics import ProgressBar
+from dask.distributed import Client, progress
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -61,7 +62,13 @@ def read_trip_data(url):
 
     try:
         logger.info(f"Reading csv file: {url}")
+
+        # Create local scheduler and workers
+        client = Client()
         df = dd.read_csv(url, blocksize=100e6, parse_dates=['tpep_pickup_datetime', 'tpep_dropoff_datetime'])
+
+        # trigger all computations, keep df in memory
+        df = client.persist(df)
     except Exception as ex:
         logger.error(f"Reading file from {url} failed with error : {ex}")
 
