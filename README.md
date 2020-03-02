@@ -111,8 +111,9 @@ Follow these instructions to get the source code and run it on your local machin
 Azure DevOp Pipeline is used to set and configure [Automated build pipeline](https://sushmag.visualstudio.com/TaxiDataPipeLine)
     
 ## Future Enhancement Plan:    
-    • Current implementation runs in a single process using single thread. Use ProcessPoolExecutor/asyncio for faster parallel/concurrent executaion.
-    • Optimize performance using asyncio and dask scheduler
+    • Optimize performance using dask scheduler to enable faster parallel processing.
+        - This is already implemented in 'enhancements' feature branch.
     • Scale pipeline to a multiple of the data size that does not fit any more to one machine using multinode clusters in cloud (e.g. AWS)
-    • Setup performance monitoring (e.g. using New Relic)
+    • Setup performance monitoring 
+    • Automate deployment using Azure DevOp Pipeline 
     
