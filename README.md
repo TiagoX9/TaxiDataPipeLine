@@ -78,10 +78,24 @@ Follow these instructions to get the source code and run it on your local machin
 
   Unit tests are written using Python's UnitTest library. Tests can be run using below command:
   ```sh
-  cd test
-  pytest test_data_processor.py
+  pytest
+  
+  or 
+  
+  python -m unittest test\test_data_processor.py
   ```
 
+### How to check coverage
+
+  Run below command to check code coverage:
+  ```sh
+  python -m coverage run test\test_data_processor.py
+  ```
+  And, then we can see coverage and can generate coverage report in html format
+  ```sh
+  coverage report
+  coverage html
+  ```
 
 ## Data Source
   Here is the list of data source urls used for creating data Pipe Line -

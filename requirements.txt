@@ -1,3 +1,4 @@
+coverage==5.0.3
 numpy==1.18.1
 pandas==1.0.0
 dask[complete]
