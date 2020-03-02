@@ -62,15 +62,10 @@ def read_trip_data(url):
 
     try:
         logger.info(f"Reading csv file: {url}")
-
-        # Create local scheduler and workers
-        client = Client()
         df = dd.read_csv(url, blocksize=100e6, parse_dates=['tpep_pickup_datetime', 'tpep_dropoff_datetime'])
-
-        # trigger all computations, keep df in memory
-        df = client.persist(df)
     except Exception as ex:
         logger.error(f"Reading file from {url} failed with error : {ex}")
+        raise ex
 
     logger.debug(f'Reading completed for url {url}')
     return df
@@ -90,7 +85,7 @@ def calculate_monthly_average(df):
             monthly_average = df.groupby(df['month'])['trip_distance'].mean().compute()
         except Exception as ex:
             logger.error(f"Monthly Average calculation failed with error : {ex}")
-
+            raise ex
 
     logger.debug("Calculation of monthly trip length average completed")
     return monthly_average
@@ -112,6 +107,7 @@ def rolling_average(df):
             r_average = dfp.groupby(dfp['month'])['trip_distance'].rolling(45).mean().reset_index(name='Rolling Average')
         except Exception as ex:
             logger.error(f"Rolling Average calculation failed with error : {ex}")
+            raise ex
 
     logger.debug("Calculation of rolling monthly trip length average is completed")
     return r_average
