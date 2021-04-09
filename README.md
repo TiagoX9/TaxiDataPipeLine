@@ -1,7 +1,8 @@
+# TaxiDataPipeLine - Data Pipeline Project
 <!-- TOC -->
 - [Description](#description)
 - [Build Status](#build-status)
-- [Content](#content)
+- [Folder Structure](#folder-structure)
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
 - [Clone repository](#clone-repository)
@@ -17,7 +18,7 @@
 - [Future Enhancement Plan:](#future-enhancement-plan)
 <!-- /TOC -->
 
-# Description
+## Description
 TaxiDataPipeLine is an application to demonstrate creation of a simple data pipeline using Yellow Taxis trip data.
 
 ## Build Status
@@ -30,7 +31,7 @@ TaxiDataPipeLine is an application to demonstrate creation of a simple data pipe
 [win-x64-build-badge]: https://mseng.visualstudio.com/pipelinetools/_apis/build/status/VSTS.Agent/azure-pipelines-agent.ci?branchName=master&jobname=Windows%20Agent%20(x64)
 [linux-x64-build-badge]: https://mseng.visualstudio.com/pipelinetools/_apis/build/status/VSTS.Agent/azure-pipelines-agent.ci?branchName=master&jobname=Linux%20Agent%20(x64)
 
-## Content
+## Folder Structure
 
 * [docs](docs/) - Project documentation
 * [src](src/) - Python source code
